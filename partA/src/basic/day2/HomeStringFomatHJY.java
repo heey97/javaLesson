@@ -24,18 +24,6 @@ public class HomeStringFomatHJY {
     System.out.println(String.format("%,15d_", i));
     System.out.println(String.format("%,-15d_", i));
     System.out.println(String.format("%,015d_", i));
-    
-
-
-
-    
-    i = 123456789;
-
-    System.out.println(String.format("%,d_", i));
-    System.out.println(String.format("%,15d_", i));
-    System.out.println(String.format("%,-15d_", i));
-    System.out.println(String.format("%,015d_", i));
-
 
 
 

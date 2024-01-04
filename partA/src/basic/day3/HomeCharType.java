@@ -21,10 +21,23 @@ public class HomeCharType {
         int numberCount = 0;
         int symbolCount = 0;
         char temp;
-        
-        for(int i=0; i<=message.length(); i++){
-            temp = message.charAt(i);
-     
+    
+        for(int i=0; i<message.length(); i++){
+             temp = message.charAt(i);
+            
+            if( Character.isUpperCase(temp)== true ){
+                upperCount++;
+            }else if(Character.isLowerCase(temp)== true){
+                lowerCount++;
+            }else if(Character.isDigit(temp)== true){
+                numberCount++;
+            }else{
+                symbolCount++;
+            }
         }
+        System.out.println("upper : "+upperCount);
+        System.out.println("lower : "+lowerCount);
+        System.out.println("number : "+numberCount);
+        System.out.println("symbol : "+symbolCount);
     }
 }

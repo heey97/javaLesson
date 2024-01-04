@@ -14,7 +14,7 @@ public class A26Test25 {
         //자바(또는 다른 프로그래밍언어)로 코딩할 떄
         //1. 자바에서 제공하는 클래스와 메소드를 잘 활용하기.
         //2. 필요에 따라 개발자가 직접 잘 만들어서 사용하기.
-        String a ="11";
+        String a ="11";                                       
         
         Scanner sc = new Scanner(System.in);
         

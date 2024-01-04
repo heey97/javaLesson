@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class A29ArrayVarTest {
     public static void main(String[] args) {
         int[] iArray = {1,2,3,4,5};
-        double[] dArray = new double[5];
+        double[] dArray = new double[]{12,3,4};
         char[] cArray = new char[5];
 
         cArray[0] = 'j';
@@ -17,7 +17,7 @@ public class A29ArrayVarTest {
         System.out.print("\n1.   ");
         System.out.println(iArray);
         System.out.print("\n2.   ");
-        System.out.println(dArray);
+        System.out.println(Arrays.toString(dArray));
         System.out.print("\n3.   ");
         System.out.println(cArray);
 

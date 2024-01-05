@@ -32,8 +32,8 @@ public class MyClass2 {
 		for(int i=0; i<f3.length; i++){
 			field3[i] = f3[i];
 		}
-		
 	}
+
 	//모든 인스턴스 값을 출력해주는메소드
 	public void printData(){
 		System.out.println("field1 = " + field1 + "field2 = " + field2

@@ -1,0 +1,66 @@
+1. 문자열 데이터 생성 방식 2가지
+    1)
+                           문자열 리터럴 생성 방식        new 연산자 사용 
+        메모리 저장         상수풀                         heap
+        인스턴스 생성       주소값 불변                    주소값 할당
+
+    2) 메소드 오버로딩을 사용하는 내장 메소드들(기능의 확장, 다형성)
+        - 의미 :매개변수를 다르게 사용해서 여러가지 형태를 가진 같은 이름의 메소드
+        - Integer.parsInt()
+        - Integer.paseDouble()
+        - Math.max(정수, 정수)
+        - Math.max(정수, 실수)
+        - Math.min(정수, 실수)
+
+2. 상속 클래스
+    -  자식 클래스는 부모 클래스의 모든 데이터속성, 메소드 사용 가능 
+    public class Triangle extends Shape { // 자식클래스 extends 부모클래스 }
+
+    - 부모클래스의 필드 사용시 super 메소드 사용.
+    - 자식클래스의 인스턴스 필드 값 저장시 this 키워드 사용
+    public Triangle(String name, int width, int height, int angle) {
+        super(name, width, height) // super.width = width 와 같음
+        this.angle = angle;
+    }
+    - 상속에서 변수 참조 타입 2가지 : 자식클래스, 부모클래스 타입
+    - 자식클래스 인스턴스 필드 값 수정 가능 , 접근 한정자 확인 필요!!
+    
+    *** 부모 메소드 자식클래스에서 오버라이드  ***
+    - 부모클래스 메소드 재정의 가능(기능의 확장, 다형성)
+    - 업 캐스팅 다운 캐스팅 : 상속 관계에 있는 부모와 자식 클래스 간의 이루어지는 형변환
+    예시)
+        Shape sh = new Diamond();   // 부모클래스를 참조하는 것 (Up Casting)
+        Diamond dm = (Diamond) sh;  // 부모클래스를 참조하는 인스턴스를 자식 클래스 타입으로 참조되는 것(Down Casting)
+    // 클래스를 배열로 사용해서 자식/부모 인스턴스 필드 초기화 및 필드 변경 가능
+    Shape[] shapes = new Shape[5];  
+    shapes[4] = new Square();
+    shapes[4].setShaeName("🎲🎲🎲");
+
+    //index 없는 배열 출력 반복실행문
+    for(Shape temp : shapes){
+        if(temp instanceof Square)
+            temp.draw();     // 도형 그리기 >>> 🎁
+    }
+
+    
+3. 접근 한정자(access modifier)
+/* 
+ * public           : 모두에게 공개
+ * private          : 모두에게 숨기기
+ * protected        : 같은패키지 클래스와 다른 패키지인 경우는 자식에게만 공개
+ *                      ㄴ Shape의 etc 는 자식인 Triangle, Diamond 에게는 공개 / 같은 패키지 B10DiamondTest 에게도 공개
+ *                      ㄴ 그 외의 경우는 비공개. 다른 패키지이지만 자식 클래스라면 공개
+ * 아무것도 안씀     : 거의 사용하지 않습니다. 같은 패키지 클래스에게만 공개
+ *                       ㄴ object.day7 패키지 클래스에게는 모두 공개 / 그 외에는 숨기기
+ */
+
+
+
+4. Wrapper 클래스 기본 자료형 정리
+    - 기본 자료형의 클래스 타입, 인스턴스 생성 없이 사용 가능
+    -               Integer          Long                   Double                  Character  
+        MAX_VALUE   2147483647      9223372036854775807     1.7976931348623157E308  65535
+        MIN_VALUE   -2147483648     -9223372036854775808    4.9E-324                0
+        SIZE        32              64                      64                      16
+        BYTES       4               8                       8                       2
+

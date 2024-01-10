@@ -48,15 +48,6 @@ public class Randomm {
         for(int i=1; i<=3; i++){
             
             System.out.print(String.format("%d번. %5d+%d %15d\n",i,addQuiz.getData1(),addQuiz.getData2(),addQuiz.getUserAnswer()));
-        }
-        String message = "Jk o{ pcog ku 5";
-        char messageArray[] = new char[message.length()];
-        
-        for(int i =0; i<messageArray.length;i++){
-            char cha = message.charAt(i);
-            messageArray[i] = cha;
-            messageArray[i] -= 2;
-        }
-        System.out.println(messageArray);     
+        }  
     }
 }

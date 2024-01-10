@@ -1,5 +1,6 @@
 package object.day6;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Randomm {
@@ -25,24 +26,37 @@ public class Randomm {
 
         int start = 11; int end = 99;
         int answer= 0;
-        int 
+        int[] arrays = new int[3];
+        
+
         System.out.println("덧셈 10문제 퀴즈를 시작합니다.");
-        for(int i=1; i<=3; i++){
+        for(int i=1; i<=3;i++){
             int temp1 = (int)(Math.random()*(end-start-1))+start;
             int temp2 = (int)(Math.random()*(end-start-1))+start;
             addQuiz.setData1(temp1);
             addQuiz.setData2(temp2);
-            System.out.print(String.format("%d번. %5d+%d=  ?\n",i,addQuiz.getData1(),addQuiz.getData2())); 
+            
+            System.out.print(String.format("%d번. %5d+%d=  ?\n",i,addQuiz.getData1(),addQuiz.getData2()));
+            int[] arrays2   = {i,addQuiz.getData1(),addQuiz.getData2()};
             System.out.print("답 입력하세요. >>> ");
             addQuiz.setUserAnswer(answer=sc.nextInt());
+            arrays[i-1] = arrays2[i-1];
+            System.out.println(Arrays.toString(arrays));
         }
         System.out.println(String.format(":::::: 채점 하고 있습니다. ::::::"));
+        System.out.println(String.format("%10s %18s %20s %23s", "문제", "제출한답", "정답", "채점"));
         for(int i=1; i<=3; i++){
+            
             System.out.print(String.format("%d번. %5d+%d %15d\n",i,addQuiz.getData1(),addQuiz.getData2(),addQuiz.getUserAnswer()));
         }
+        String message = "Jk o{ pcog ku 5";
+        char messageArray[] = new char[message.length()];
         
-
-        
-        
+        for(int i =0; i<messageArray.length;i++){
+            char cha = message.charAt(i);
+            messageArray[i] = cha;
+            messageArray[i] -= 2;
+        }
+        System.out.println(messageArray);     
     }
 }

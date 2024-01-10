@@ -26,9 +26,6 @@ public class AddQuiz {
         this.userAnswer = userAnswer;
     }
 
-    public int[] arrays(){
-        return
-    }
-
+    
 
 }

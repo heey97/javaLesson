@@ -22,6 +22,7 @@ public class B19AbleMain {
         //멍멍이 클래스에 thinkable 인터페이스 정의안해줌
 
         Runnable run1 = new Human();
+        Runnable run3 = new Human();
         Runnable run2 = new Dog();
         // Runnable run3 = new AI(); ai는 달릴수없어서 
         // ai클래스에 runnable 인터페이스 정의안해줌

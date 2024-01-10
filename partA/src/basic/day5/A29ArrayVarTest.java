@@ -33,13 +33,14 @@ public class A29ArrayVarTest {
         System.out.println("temp 배열의 값 : " + Arrays.toString(temp));
         System.out.println("\n6. 어라?? iArray도 똑같네 ~~ !!!");
         System.out.println("iArray[3] =" + iArray[3]);
-        System.out.println("iArray 배열의 값 : " + Arrays.toString(temp));
+        System.out.println("iArray 배열의 값 : " + Arrays.toString(iArray));
 
 
         //다른 인덱스의 값도 확인
         iArray[1] = 1234;
         System.out.println("\n7. temp배열과 iArrays 는 하나의 배열을 가리킵니다. !!!");
         System.out.println("temp 배열의 값 :" + Arrays.toString(iArray));
+        System.out.println("iArray 배열의 값 : " + Arrays.toString(temp));
 
         int age =23;
         int itemp;

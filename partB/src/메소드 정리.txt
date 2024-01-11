@@ -13,6 +13,19 @@ Arrays.toString(a)  배열 a를 작은것부터 정렬
 
 
 
+인터페이스 구성
+추상메소드 abstract
+상수
+정적메소드 static
+default 메소드 = 이미 추상메소드를 사용중인 인터페이스에 새로 추상메소드를 추가할때 에러가 나기때문에 default 메소드를 사용.
+                                                                                ㄴ 에러나는이유 인터페이스의 추상메소드를 override 안해줬기때문.
+
+
+인터페이스중 다형성
+CharSequence  char 값을 읽을 수 있는 시퀀스
+
+Comparable Comparator[비교해서 정렬할떄주로사용]
+
 //인터페이스 변수선언x 
 //인터페이스 = 추상메소드
 

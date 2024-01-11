@@ -1,0 +1,26 @@
+part a - 데이터 연산자 조건문 반복문 배열
+
+part b - 배열 클래스 메소드 생성자 상속 인터페이스 클래스   생성자 호출시 Member member = new Member(int,string) 시 
+				                    new Member(int,string) 이렇게만도 선언가능
+
+
+part c - 자료구조 List,Set(LinkedSet(입력한 순서대로),TreeSet(정렬)),Map
+
+Comparator<Member> nameAscending = new Comparator<Member>() {
+            @Override
+            public int compare(Member o1, Member o2){
+                return o1.getName().compareTo(o2.getName());         //내림차순 o1>o2 이 되어야합니다.
+            }                                                        // o2-o1 < 0이면 교환하지 않습니다.
+        };
+list.sort(nameAscending);
+리스트정렬			
+
+람다식
+list.sort((o1,o2)->{
+            return o2.getName().compareTo(o1.getName());
+        });
+
+Comparator로 비교후 리스트 셋 맵등 리스트 에서 최댓값 최솟값 출력하는 건 Collection.max or min
+
+https://innu3368.tistory.com/m/230
+

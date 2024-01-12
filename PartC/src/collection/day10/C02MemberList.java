@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import object.day9.Student;
-
 public class C02MemberList {
     public static void main(String[] args) {
         List<Member> list = new ArrayList<>();

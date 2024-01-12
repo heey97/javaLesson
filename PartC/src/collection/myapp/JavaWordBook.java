@@ -1,4 +1,4 @@
-package collection.day10;
+package collection.myapp;
 
 import java.util.*;
 // JavaWord 여러개를 저장할 클래스 입니다.
@@ -57,11 +57,11 @@ public class JavaWordBook {
         List<JavaWord> all = new ArrayList<>(this.wordBook.values());
         wordListPrint(all);
     }
-    public void wordaddPrint(){
+    // public void wordaddPrint(){
         
-        List<JavaWord> add = new ArrayList<>(this.wordBook.values());
-        wordListPrint(add.get(0));;
-    }
+    //     List<JavaWord> add = new ArrayList<>(this.wordBook.values());
+    //     wordListPrint(add.get(0));;
+    // }
     public void wordListPrint(List<JavaWord>list){
         System.out.println("~".repeat(20)+"~단어장~"+"~".repeat(20));
         System.out.println(String.format("%-15s %-15s\t %9s","<english>","<korean>","<level>"));

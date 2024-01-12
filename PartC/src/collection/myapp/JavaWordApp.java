@@ -1,4 +1,4 @@
-package collection.day10;
+package collection.myapp;
 
 import java.util.*;
 

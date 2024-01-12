@@ -1,4 +1,4 @@
-package collection.day10;
+package collection.myapp;
 
 public class JavaWord {
     private String english;

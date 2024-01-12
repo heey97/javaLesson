@@ -54,8 +54,6 @@ public class ArrayProb {
         for(int i =0; i<messageArray.length;i++){
             char cha = message.charAt(i);
             messageArray[i] = cha;
-        }
-        for(int i=0; i<messageArray.length;i++){
             messageArray[i] -= 2;
         }
         System.out.println(Arrays.toString(messageArray));

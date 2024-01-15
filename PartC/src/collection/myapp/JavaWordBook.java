@@ -25,6 +25,7 @@ public class JavaWordBook {
     }
 
     //--------------조회----------------
+    //map 의 특징 - db의 기본키와 비슷함
     // 단어로 조회
     public List<JavaWord> searchWord(String english){
         List<JavaWord> rs = new ArrayList<>();
@@ -52,17 +53,21 @@ public class JavaWordBook {
         this.wordBook.remove(english);
     }
 
-    public void wordAllPrint(){
+    public List<JavaWord> wordAll(){
         
-        List<JavaWord> all = new ArrayList<>(this.wordBook.values());
-        wordListPrint(all);
+        List<JavaWord> all = new ArrayList<>(this.wordBook.values()); //**** 맵의 값만 가져와서 리스트로 만듦*/
+        return all;
     }
-    // public void wordaddPrint(){
-        
-    //     List<JavaWord> add = new ArrayList<>(this.wordBook.values());
-    //     wordListPrint(add.get(0));;
-    // }
-    public void wordListPrint(List<JavaWord>list){
+
+    public void Print(){
+        System.out.println("~".repeat(20)+"~단어장~"+"~".repeat(20));
+        System.out.println(String.format("%-15s %-15s\t %9s","<english>","<korean>","<level>"));
+        for(JavaWord word : wordBook.values()){
+            System.out.println(String.format("%-15s %-15s\t %d",word.getEnglish(),word.getKorean(),word.getLevel()));
+        }
+    }
+
+    public static void wordListPrint(List<JavaWord>list){
         System.out.println("~".repeat(20)+"~단어장~"+"~".repeat(20));
         System.out.println(String.format("%-15s %-15s\t %9s","<english>","<korean>","<level>"));
         for(JavaWord word : list){

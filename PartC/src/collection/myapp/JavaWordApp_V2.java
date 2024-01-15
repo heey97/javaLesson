@@ -63,16 +63,18 @@ public class JavaWordApp_V2 {
         System.out.print("삭제할 단어를 영문으로 입력하세요. _");
         String find = System.console().readLine();
         boolean isFind=false;           //단어 존재 유무 확인 변수
-        for(int i=0;i<words.size();i++){
+        for(int i=0;i<words.size();i++){   //for(JavaWord w : words) - > 오류 (인덱스가 정져있기때문에 인덱스가 변하게되면 오류)
             if(words.get(i).getEnglish().equals(find)){
                 isFind=true;
-                System.out.println("인덱스 " + i + " 에서 단어를 찾았습니다.");
+                System.out.println("단어를 찾았습니다. ->" + words.get(i));
                 System.out.print("삭제하려면 엔터, 취소는 n 을 입력하세요._");
                 if(System.console().readLine().equals("n"))
                             continue;
                 else {
                     //단어 삭제.
                     words.remove(i); System.out.println("단어 삭제 완료!!");
+                    //삭제후 바뀐 인덱스를 다시 현재로 찍어줘야 정상적으로 비교가능
+                    i--;
                 }            
             }   //단어 비교 if end
         }   //for end

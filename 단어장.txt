@@ -1,0 +1,3 @@
+public, 공용의,1
+private,사적인,2
+iterator,반복자,3

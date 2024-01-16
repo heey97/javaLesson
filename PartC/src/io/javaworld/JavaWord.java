@@ -1,4 +1,4 @@
-package collection.myapp;
+package io.javaworld;
 
 public class JavaWord {
     private String english;

@@ -66,6 +66,11 @@ public class JavaWordList implements WordlList{
     //단어를 인덱스로 삭제
     @Override
     public JavaWord remove(int index) {
+        if(index < 0 || index > words.size())
+                throw new IllegalArgumentException("삭제할 인덱스 범위가 잘못됐씁니다"); //가장많이쓰는 예외처리
+                //새로운 Exception 객체를 생성하면 개발자가 만든 예외가 발생됩니다.
+                // 발생시킬 익셉션 종류는 IllegalArgumentException("") 와 같은 이름으로 많이사용합니다
+                // 예를 들면 웹개발 할떄는 모든 예외를 한번에 처리하기 위해 이런방법 씁니다.
         JavaWord word = words.remove(index);
         return word; //삭제한 데이터를 리턴
     }

@@ -1,4 +1,4 @@
-package etc.day15;
++package etc.day15;
 
 import java.net.Socket;
 import java.time.LocalDate;

@@ -19,12 +19,13 @@ INSERT INTO TBL_MEMBER VALUES (4,'박사나','san@gmail.com','2022-10-05');
 INSERT INTO TBL_MEMBER VALUES (5,'이나연','nayeon@gmail.com','2020-10-05');
 INSERT INTO TBL_MEMBER VALUES (6,'강나현','nahyeon@gmail.com','2021-05-05');
 INSERT INTO TBL_MEMBER VALUES (7,'나쯔위','na1234@gmail.com','2021-05-05');
+INSERT INTO TBL_MEMBER VALUES (10,'홍길동','gdHong@daum.net',TO_date('20241009','yyyymmdd'));
 INSERT INTO TBL_MEMBER(MNO,NAME,JOIN_DATE) VALUES (8,'강감찬','2020-05-05');
 INSERT INTO 
 	TBL_MEMBER(MNO,NAME) 
 VALUES 
 	(9,'이순신');
-
+DELETE FROM TBL_MEMBER tm ;
 -- DML: 2. SELECT 는 데이터 조회 (모든 행 , 특정 조건의 행, 모든 열, 지정된 열)
 --		select 조회할 열 from 테이블 이름 [where]특정 행을 조회할 조건 [order by] 정렬할 컬럼
 --				ㄴ 모든 열을 지정하는 기호 * (와일드카드 문자)

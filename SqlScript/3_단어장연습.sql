@@ -58,8 +58,8 @@ WHERE IDX BETWEEN 2 AND 5;
 
 --SELECT 컬럼명1, 컬럼명2,... FROM 테이블명
 --[WHERE 컬럼명 = 값]
-SELECT IDX ||' '|| ENGLISH  
-	AS IDXeng 
+SELECT IDX ||' '|| ENGLISH AS 
+
   FROM TBL_JAVAWORLD 
  ORDER BY IDX ASC;
 

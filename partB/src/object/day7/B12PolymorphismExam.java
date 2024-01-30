@@ -40,6 +40,7 @@ public class B12PolymorphismExam {
         System.out.println("~~~~~ 자식객체의 실제 타입을 검사하는 instanceof 연산 ~~~~~");
         for(int i=0; i<shapes.length; i++) {
             System.out.println("도형 : " + shapes[i].getShapeName());
+            //부모 객체를 다운캐스팅 하기전에 instanceof로 자식객체의 타입을 검사해줍니다
             System.out.println("\t shapes[i] instanceof Triangle ? " + (shapes[i] instanceof Triangle));
             System.out.println("\t shapes[i] instanceof Diamond ? " + (shapes[i] instanceof Diamond));
             System.out.println("\t shapes[i] instanceof Square ? " + (shapes[i] instanceof Square));
@@ -81,5 +82,56 @@ public class B12PolymorphismExam {
         
         
     } 
-    
+    /*
+     * 3. 클래스 상속에 대한 설명으로 맞는 것을 모두 고르세요. 
+     * 
+  
+     *  1)상속의 장점은 중복된 코드를 줄일 수 있고 통일성과 다형성을 구현할 수 있다.
+        
+        정답 : O
+
+     *  상속의 장점은 처음에 설명했던 것과 큰 차이가 없다. 
+     *  중복된 코드를 줄일 수 있고, 유지 보수가 편리하며, 코드간의 '통일성'이 있고
+     *  하나의 코드로 다양하게 사용할 수 있는 '다형성'을 구현할 수 있다. 
+  
+
+     *  2) 부모 클래스의 private를 갖는 필드는 자식 클래스가 직접 사용이 가능하다.
+     * 
+     *  정답 : X
+     * 
+     *  private 접근제한자를 갖는 필드를 자식클래스에서 사용하기 
+     *  위해서는 getter setter메소드를 사용해야 한다.
+
+     * 
+     *  3) 자식 클래스 객체가 생성될 때 부모클래스의 생성자가 반드시 실행된다.
+
+     *  정답 : O
+     * 
+     *  자식 클래스 객체가 생성될떄 자식 클래스를 
+     *  초기화 하기위해서는
+     *  부모 클래스가 먼저 초기화 되어야 하기 때문에 
+     *  부모 생성자는 반드시 실행되어야한다.
+     * 
+     * 
+     *  4) 자식 객체는 부모 클래스 타입의 변수로 참조될 수 없다.
+     *  정답 : X
+     * 
+     *  자바는 다형성을 위해 부모클래스로의 타입변환을 허용한다 
+     *  즉, 부모타입에 모든 자식객체가 대입될 수 있다.
+     *
+     * 
+     *  5) 자식타입에서 사용할수 있는 객체 멤버갯수가 더 많기 때문에
+     *     부모 객체는 자식 클래스 타입의 변수로 참조 될 수 없다.
+     * 
+     *  정답 : X
+     * 
+     *  자식타입에서 사용할수 있는 객체 멤버갯수가 더 많기 때문에
+     *  부모 객체는 자식 클래스 타입의 변수로 참조 될 수 없다.
+     * 
+     * 
+     * 
+     * 
+     * 8. 자식클래스에서 직접 부모 클래스의 메소드를 재정의하기위해
+     *    메소드 오버라이딩을 사용합니다.
+     */
 }

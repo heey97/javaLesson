@@ -1,0 +1,8 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Administrator\\Downloads\\lombok.jar",
+        "d:\\Class231228\\설치프로그램\\ojdbc11.jar"
+    ]
+}

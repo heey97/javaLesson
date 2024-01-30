@@ -25,8 +25,12 @@ public class JavaWordApp {
         myBook.addWord(new JavaWord("binary1", "2진수의", 3));
 
         //단어장 출력
-        myBook.wordAllPrint();
+        myBook.Print();
+        List<JavaWord> list = new ArrayList<>();
+        JavaWordBook.wordListPrint(list);
 
+                                                                  
+        
         
         String addEn;
         String addKo;

@@ -2,8 +2,6 @@ package collection.day11;
 
 import java.util.*;
 
-import collection.myapp.JavaWord;
-
 
 /*----------------------- 요구사항 -------------------*/ 
 /* 메뉴선택 
@@ -121,105 +119,66 @@ public class CustomerManageApp {
                 System.out.print("\n찾을 전화번호를 입력해주십시오 :");
                 findPhone= System.console().readLine();
 
-                System.out.print("\n찾을 그룹을 입력해주십시오 :");
-                findGroup= Integer.parseInt(System.console().readLine());
-                searchList=SearchWord(findName,findPhone,findGroup);  
-            default:
-                System.out.println("\n잘못누르셨습니다 번호에 맞게 입력해주십시오.");
-            return;
-            }
-            
-            System.out.println("\t::::::검색 결과::::::");
-            if(list.size()==0) System.out.println("찾는 단어가 단어장에 없습니다.:");
-            else PrintList(searchList);;
-        } 
-    private List<Customer> SearchWord(String s){
-        List<Customer> rs = new ArrayList<>();
-        for(Customer lists : list){
-            if(lists.getName().matches(".*"+s.trim()+".*")) {
-                rs.add(lists);
-            }
+            System.out.print("\n찾을 그룹을 입력해주십시오 :");
+            findGroup= Integer.parseInt(System.console().readLine());
+            searchList=SearchWord(findName,findPhone,findGroup);  
+        default:
+            System.out.println("\n잘못누르셨습니다 번호에 맞게 입력해주십시오.");
+        return;
         }
-        return rs;
+        
+        System.out.println("\t::::::검색 결과::::::");
+        if(list.size()==0) System.out.println("찾는 단어가 단어장에 없습니다.:");
+        else PrintList(searchList);;
+    } 
+   private List<Customer> SearchWord(String s){
+    List<Customer> rs = new ArrayList<>();
+    for(Customer lists : list){
+        if(lists.getName().matches(".*"+s.trim()+".*")) {
+            rs.add(lists);
+         }
     }
-    private List<Customer> SearchWord(int i){
-        List<Customer> rs = new ArrayList<>();
-        for(Customer lists : list){
-            if(lists.getGroup() == i) {
-                rs.add(lists);
-            }
-        }
-        return rs;
+    return rs;
+   }
+   private List<Customer> SearchWord(int grNum){
+    List<Customer> rs = new ArrayList<>();
+    for(Customer lists : list){
+        if(lists.getGroup() == grNum) {
+            rs.add(lists);
+         }
     }
-    private List<Customer> SearchWord(String s1,String s2,int i){
-        List<Customer> rs = new ArrayList<>();
-        for(Customer lists : list){
-            if(lists.getName().matches(".*"+s1.trim()+".*") && lists.getPhone().matches(".*"+s2.trim()+".*")
-                && lists.getGroup() == i) {
-                rs.add(lists);
-            }
-        }
-        return rs;
+    return rs;
+   }
+   private List<Customer> SearchWord(String s1,String s2,int i){
+    List<Customer> rs = new ArrayList<>();
+    for(Customer lists : list){
+        if(lists.getName().matches(".*"+s1.trim()+".*") && lists.getPhone().matches(".*"+s2.trim()+".*")
+            && lists.getGroup() == i) {
+            rs.add(lists);
+         }
     }
-
-/****************************************  삭제  ****************************************************/
-    private void RemoveList() {
-        System.out.println("\n\t::::::: -삭제- :::::::\n");
-        System.out.print("삭제할 단어를 영문으로 입력하세요. : ");
-        String find = System.console().readLine();
-        boolean isFind=false;
-        for(int i=0;i<list.size();i++){
-            if(list.get(i).getName().equals(find)){
-                isFind=true;
-                System.out.println("인덱스 " + i + " 에서 단어를 찾았습니다.");
-                System.out.print("삭제하려면 엔터, 취소는 n 을 입력하세요._");
-                if(System.console().readLine().equals("n"))
+    return rs;
+   }
+   private void list() {
+    System.out.println("-삭제-을 선택하셨습니다!");
+    System.out.print("삭제할 단어를 영문으로 입력하세요. _");
+    String find = System.console().readLine();
+    boolean isFind=false;           //단어 존재 유무 확인 변수
+    for(int i=0;i<list.size();i++){
+        if(list.get(i).getName().equals(find)){
+            isFind=true;
+            System.out.println("인덱스 " + i + " 에서 단어를 찾았습니다.");
+            System.out.print("삭제하려면 엔터, 취소는 n 을 입력하세요._");
+            if(System.console().readLine().equals("n"))
                         continue;
-                else {
-                    list.remove(i); System.out.println("단어 삭제 완료!!");
-                }            
-            }
-        }
-        if(!isFind)
-                System.out.println("삭제할 단어는 단어장에 없습니다.");
-    }
-
-/****************************************  수정  ****************************************************/
-
-    private void SetListEx() {
-        System.out.println("\n\t::::::: -수정- :::::::\n");
-        System.out.print("수정할 번호와 그룹의 이름을 입력하세요. :");
-        String name = System.console().readLine();
-        boolean isFind=false;
-
-        for(Customer lists : list){
-            if(lists.getName().equals(name)){
-                isFind=true;
-                System.out.println("\n입력한 이름의 현재 번호 :"+lists.getPhone()+
-                                   "\n입력한 이름의 현재 그룹 :"+lists.getGroup()+
-                                   "\n수정하지 않으려면 엔터키를 눌러주십시오");
-                System.out.print("\n번호를 수정하려면 입력값을 넣어주십시오. >>>>>");
-                String phone = System.console().readLine();
-                System.out.print("그룹을 수정하려면 입력값을 넣어주십시오. >>>>>");
-                String a = System.console().readLine().trim();
-                if(a.isBlank() == true){
-                    a = "-999";
-                }
-                int group = Integer.parseInt(a);
-                    if(phone.isBlank()==true){
-                        lists.modify(lists.getPhone(),group);      
-                    }else if(group == -999){ 
-                        lists.modify(phone,lists.getGroup()); 
-                    }else{
-                        lists.modify(phone,group);
-                    }
-                        System.out.println("번호를"+lists.getPhone()+"로 수정하였습니다.");
-                        System.out.println("그룹을"+lists.getGroup()+"로 수정하였습니다.");
-            }else if(isFind == false){
-                System.out.println("일치하는 이름이 없습니다.");
-                return;
-            }
-        }
-    }   
+            else {
+                //단어 삭제.
+                list.remove(i); System.out.println("단어 삭제 완료!!");
+            }            
+        }   //단어 비교 if end
+    }   //for end
+    if(!isFind)         //isFind==false
+            System.out.println("삭제할 단어는 단어장에 없습니다.");
 }
 
+}

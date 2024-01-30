@@ -15,6 +15,10 @@ public class A01DataTest {
         double weight = 57.891234567890;
         boolean isAdult;
         char grade = 'C';
+        int a = (char)' ';
+        char b = ' ';
+        System.out.println(a);
+        System.out.println((char)b);
 
         //(2) 데이터 값 변경 - 대입문 또는 연산자 활용
     

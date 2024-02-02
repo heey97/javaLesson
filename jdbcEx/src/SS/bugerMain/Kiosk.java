@@ -76,7 +76,8 @@ public class Kiosk {
         while(run){
         
         System.out.println("\n"+".".repeat(70));
-        System.out.println("[1] 전체 메뉴 검색     [2] 알뜰 버거 검색    [3] 저칼로리 버거 검색      [4] 추천 세트");
+        System.out.println("[1] 전체 메뉴 조회     [2] 버거 조회    [3] 치킨 조회    [4] 디저트 조회    [5] 음료수 조회");
+        System.out.println("[6] 아이스크림 조회    [7] 저칼로리 버거 조회    [8] 저칼로리 버거 조회     [9] 추천 세트 조회");
         System.out.println("[Any Key] 이전 메뉴로 돌아가기");
         System.out.println(".".repeat(70));
         System.out.print("\n원하시는 항목의 번호를 입력해주세요. >>> ");
@@ -108,7 +109,7 @@ public class Kiosk {
         while(run){
         
         System.out.println("\n"+".".repeat(70));
-        System.out.println("[1] 전체 메뉴 검색     [2] 알뜰 버거 검색    [3] 저칼로리 버거 검색      [4] 추천 세트");
+        System.out.println("[1] 버거 목록     [2] 디저트 목록    [3] 드링크목록      [4] 추천 세트");
         System.out.println("[Any Key] 이전 메뉴로 돌아가기");
         System.out.println(".".repeat(70));
         System.out.print("\n원하시는 항목의 번호를 입력해주세요. >>> ");
@@ -116,13 +117,16 @@ public class Kiosk {
         
         switch (chk) {
             case 1:
-            foodDao.recBuger();
+            print();
+            System.out.println(foodDao.recBuger());
                 break;
             case 2:
-            foodDao.recDessert();
+            print();
+            System.out.println(foodDao.recDessert());
                 break;
             case 3:
-            foodDao.recDrink();
+            print();
+            System.out.println(foodDao.recDrink());
                 break;
             
             default:

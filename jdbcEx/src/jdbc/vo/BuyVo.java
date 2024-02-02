@@ -8,7 +8,6 @@ import lombok.Getter;
 import lombok.ToString;
 
 @Getter
-@ToString
 
 @EqualsAndHashCode
 public class BuyVo {
@@ -25,6 +24,13 @@ public class BuyVo {
 		this.quantity = quantity;
 		this.buyDate = buyDate;
 	}
+
+	@Override
+	public String toString() {
+		return buyIdx + ", " + customid + ", " + pcode + ", " + quantity
+				+ ", " + buyDate;
+	}
+
 }
 //필드값이 모두 값으면 equals 로 true 가 되도록 하고싶다.
 //-> equals 와 hashcode 를 재정의해야 합니다. (vo 객체)

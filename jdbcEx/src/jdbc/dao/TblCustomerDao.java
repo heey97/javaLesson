@@ -125,7 +125,7 @@ public class TblCustomerDao {
         }
         return list;   //자바객체 list와 매핑한 결과 list 를 리턴
     }
-    public Map<String,CustomerVo> getCustomerMap(String customerId) {
+    public Map<String,CustomerVo> getCustomerMap(String customerId)       {
         Map<String,CustomerVo> map = new LinkedHashMap<String,CustomerVo>();
         String sql = "SELECT * FROM TBL_CUSTOM WHERE CUSTOM_ID = ?";
 

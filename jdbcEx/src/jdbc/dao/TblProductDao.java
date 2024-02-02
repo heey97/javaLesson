@@ -70,4 +70,21 @@ public class TblProductDao {
         
         return list;
     }
+    public Map<String,Integer>getPriceTable(){
+        String sql = "SELECT PCODE,PRICE FROM TBL_PRODUCT";
+        Map<String,Integer> map = new LinkedHashMap<String,Integer>();
+        try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            ResultSet rs = pstmt.executeQuery();
+
+            while(rs.next()){
+                map.put(rs.getString(1),rs.getInt(2));
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return map;
+    }
+
+
 }

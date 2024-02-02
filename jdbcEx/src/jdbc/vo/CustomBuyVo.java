@@ -20,7 +20,7 @@ public class CustomBuyVo {
 
     @Override
     public String toString() {
-        return "CustomBuyVo = " + buy_IDX + ", " + pcode + ", " + pname + ", " + price
+        return buy_IDX + ", " + pcode + ", " + pname + ", " + price
                 + ", " + quantity + ", " + Buy_date+"\n";
     }
     

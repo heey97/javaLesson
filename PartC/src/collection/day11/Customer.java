@@ -1,12 +1,15 @@
 package collection.day11;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
     private String name;
     private String Phone;
     private int group;
 
 
-    public Customer (String name, String phone, int group) {
+    public Customer (String name, String phone, Integer group) {
         this.name = name;
         this.Phone = phone;
         this.group = group;
